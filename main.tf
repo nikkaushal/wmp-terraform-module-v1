@@ -1,6 +1,7 @@
 module "network" {
   source = "./modules/network"
-  component = var.components
+  for_each = var.components
+  components = each.key
   env       = "dev"
 
 }
